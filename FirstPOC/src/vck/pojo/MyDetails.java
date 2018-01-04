@@ -28,4 +28,9 @@ public class MyDetails {
 	public void setQual(String qual) {
 		this.qual = qual;
 	}
+
+	@Override
+	public String toString() {
+		return "MyDetails [Name=" + name + ", Age=" + age + ", Qualification=" + qual + "]";
+	}
 }

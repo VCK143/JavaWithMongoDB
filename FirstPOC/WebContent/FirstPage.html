@@ -5,8 +5,44 @@
 <title>My Web Page</title>
 </head>
 <body bgcolor="blue">
+	<script type="text/javascript">
+		function validateform() {
+			var x = document.MyForm.name.value.trim();
+			var y = document.MyForm.age.value;
+			var z = document.MyForm.qual.value.trim();
+			if (x == "" || x == null) {
+				alert("Enter your Name");
+				return false;
+			}
+
+			if (y == "" || y == null) {
+				alert("Enter age");
+				return false;
+			} else {
+				if (y <= 18 || y >= 60) {
+					alert("Please Enter age between 18 to 60");
+					return false;
+				}
+				//try{
+				//	var n = parseInt(y);
+				//} catch (e) {
+				//	alert("Enter age in int value");
+				//}
+			}
+
+			if (z == "" || z == null) {
+				alert("Enter Qulification")
+				return false;
+			} else if (z === "MCA" || z === "B.Tech" || z === "BCA") {
+				return true;
+			} else {
+				alert("Only(MCA, B.Tech, BCA) is eligible");
+				return false;
+			}
+		}
+	</script>
 	<form action="InsertList" method="post" name="MyForm"
-		style="background-color: yellow;">
+		onsubmit="return validateform()" style="background-color: yellow;">
 		<div align="center">
 			<h1>Enter Your Details Below</h1>
 			<table>

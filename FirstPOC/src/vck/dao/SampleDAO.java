@@ -14,6 +14,7 @@ import vck.pojo.MyDetails;
 
 public class SampleDAO {
 	public static void main(String[] args) {
+		// SampleDAO.retriveDataMongo();
 	}
 
 	@SuppressWarnings("deprecation")
@@ -78,9 +79,9 @@ public class SampleDAO {
 			DBObject obj = null;
 			while (cursor.hasNext()) {
 				obj = cursor.next();
-				details.setName(obj.get("Name").toString());
+				details.setName(obj.get("Name").toString().trim());
 				details.setAge(Integer.parseInt(obj.get("Age").toString()));
-				details.setQual(obj.get("Qualification").toString());
+				details.setQual(obj.get("Qualification").toString().trim());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
